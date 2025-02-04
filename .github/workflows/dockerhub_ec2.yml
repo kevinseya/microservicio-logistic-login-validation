@@ -61,6 +61,6 @@ jobs:
             # Ejecutar nuevo contenedor
             sudo docker run -d --name logistic_login_validation \
               --env-file .env \
-              -p 8080:8080 \
+              -p 5000:5000 \
               kevinseya/logistic_login_validation:latest
           EOF
