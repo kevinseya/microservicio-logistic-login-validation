@@ -52,11 +52,18 @@ jobs:
             sudo docker rm logistic_login_validation || true
 
             # Generar archivo .env
-            echo "DB_IP=${{ secrets.DB_IP }}" > .env
-            echo "DB_USER=${{ secrets.DB_USER }}" >> .env
-            echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
-            echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
-            echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
+            echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" > .env
+            echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" >> .env
+            echo "MYSQL_HOST=${{ secrets.MYSQL_HOST }}" >> .env
+            echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> .env
+            echo "MYSQL_PORT=${{ secrets.MYSQL_PORT }}" >> .env
+            echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> .env
+            echo "PG_DATABASE=${{ secrets.PG_DATABASE }}" >> .env
+            echo "PG_HOST=${{ secrets.PG_HOST }}" >> .env
+            echo "PG_PASSWORD=${{ secrets.PG_PASSWORD }}" >> .env
+            echo "PG_PORT=${{ secrets.PG_PORT }}" >> .env
+            echo "PG_USER=${{ secrets.PG_USER }}" >> .env
+            echo "PORT=${{ secrets.PORT }}" >> .env
 
             # Ejecutar nuevo contenedor
             sudo docker run -d --name logistic_login_validation \
