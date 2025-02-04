@@ -5,7 +5,7 @@ const findUserByEmail = async (email, isClient) => {
   let query, user;
 
   if (isClient) {
-    query = 'SELECT * FROM clients WHERE email = $1';
+    query = 'SELECT * FROM customer WHERE email = $1';
     const { rows } = await pgPool.query(query, [email]);
     user = rows[0];
   } else {
