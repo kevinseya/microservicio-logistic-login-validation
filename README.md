@@ -51,9 +51,9 @@ npm start
 The application will run on http://localhost:3000.
 
 📌 Response Codes
-200 OK: Authentication successful.
-400 Bad Request: Incorrect or missing credentials.
-500 Internal Server Error: Error on the server
+- 200 OK: Authentication successful.
+- 400 Bad Request: Incorrect or missing credentials.
+- 500 Internal Server Error: Error on the server
 
 
 
