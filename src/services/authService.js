@@ -27,7 +27,7 @@ const login = async (email, password, isClient) => {
     id: user.id,
     name: user.name,
     email: user.email,
-    role: isClient ? 'client' : user.role,
+    role: isClient ? 'CLIENT' : user.role,
   };
 
   const token = generateToken(payload);
