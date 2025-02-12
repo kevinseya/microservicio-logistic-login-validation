@@ -44,14 +44,14 @@ jobs:
               sudo systemctl enable docker
             fi
 
-            # Bajar la imagen
+            # Download the image
             sudo docker pull kevinseya/logistic_login_validation:latest
 
-            # Detener y eliminar contenedor anterior
+            # Stop and remove previous container
             sudo docker stop logistic_login_validation || true
             sudo docker rm logistic_login_validation || true
 
-            # Generar archivo .env
+            # Generate .env file
             echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" > .env
             echo "MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}" >> .env
             echo "MYSQL_HOST=${{ secrets.MYSQL_HOST }}" >> .env
@@ -65,7 +65,7 @@ jobs:
             echo "PG_USER=${{ secrets.PG_USER }}" >> .env
             echo "PORT=${{ secrets.PORT }}" >> .env
 
-            # Ejecutar nuevo contenedor
+            # Run new container
             sudo docker run -d --name logistic_login_validation \
               --env-file .env \
               -p 5000:5000 \
